@@ -1,0 +1,39 @@
+<!-- header -->
+<app-header></app-header>
+
+
+<div class="container d-flex flex-row mt-spacer">
+
+  <!-- side bar -->
+  <app-aside></app-aside>
+
+  <section class="flex-grow-1">
+    <form #newData="ngForm" (ngSubmit)="new_data(newData)" novalidate class="d-flex align-items-center">
+          <textarea name="name"
+            [(ngModel)]="itemData.name"
+            required
+            autocomplete="off"
+            rows="3"
+            placeholder="Başlık giriniz"></textarea>
+      <textarea name="desc"
+            [(ngModel)]="itemData.desc"
+            required
+            autocomplete="off"
+            rows="3"
+            placeholder="Açıklama giriniz"
+            class="mt-spacer"></textarea>
+      <input name="point"
+            [(ngModel)]="itemData.point"
+            required
+            autocomplete="off"
+            placeholder="Puan giriniz"
+            type="number" min="0" max="100"
+            class="mt-spacer">
+
+      <button type="submit" class="mt-spacer" [disabled]="!newData.valid">Kaydet</button>
+    </form>
+  </section>
+
+</div>
+
+

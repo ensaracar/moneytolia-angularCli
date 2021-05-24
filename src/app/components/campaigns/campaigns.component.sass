@@ -1,0 +1,55 @@
+@import "../../../assets/css/my_variables"
+
+
+.filter-area
+  @extend .d-flex
+  @extend .flex-row
+  @extend .align-items-center
+  input
+    @extend .flex-grow-1
+    margin-right: 1rem
+
+  select
+    margin-left: auto
+.campaigns-area
+  .item
+    background-color: #fff
+    border-radius: $border-radius
+    margin-bottom: 1rem
+    border-bottom: 2px solid lighten($color-1 , 5%)
+    padding: 2vw
+
+    > *
+      width: 100%
+
+    &, .point-box, .info-box,.bottom-box,.plus-minus-box,.buttons-box
+      @extend .d-flex
+
+
+    .point-box
+      width: 20%
+      min-width: 100px
+      span
+        font-size: 3rem
+        @extend .font-weight-bold
+
+
+    .info-box
+      width: 100%
+
+      .bottom-box
+        @extend .mt-spacer
+        width: 100%
+
+        .plus-minus-box
+          margin-right: 1rem
+          > *
+            &:not(:first-child)
+              margin-left: .5rem
+
+
+        .buttons-box
+          margin-left: auto
+          > *
+            &:not(:first-child)
+              margin-left: .5rem

@@ -1,0 +1,16 @@
+<form #loginFrom="ngForm" (ngSubmit)="checkUser(loginFrom)" novalidate>
+  <input name="username"
+         type="text"
+         ngModel
+         [placeholder]="'kullanıcı adı:'+adminInfo.username"
+         required autocomplete="off"
+         [class]="loginFrom.controls.username ?.touched ? (loginFrom.value.username  === '' ? 'passive' : 'active') : ''">
+  <input name="password"
+         type="password"
+         ngModel
+         [placeholder]="'şifre:'+adminInfo.password"
+         required
+         [class]="loginFrom.controls.password ?.touched ? (loginFrom.value.password  === '' ? 'passive' : 'active') : ''">
+
+  <button type="submit" [disabled]="!loginFrom.valid">Giriş</button>
+</form>

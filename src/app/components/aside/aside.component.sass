@@ -1,0 +1,19 @@
+@import "../../../assets/css/my_variables"
+
+aside
+  width: 25%
+  min-width: 250px
+  padding-right: 25px
+
+  a
+    display: block
+    color: inherit
+    text-decoration: none
+    padding: 12px 15px
+    background-color: white
+    margin-bottom: .5rem
+    border-right: 2px solid lighten($color-1 , 5%)
+    @extend .transition
+
+    &:hover
+      background-color: darken($color-2, 5%)

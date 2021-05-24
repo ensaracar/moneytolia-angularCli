@@ -1,0 +1,46 @@
+@import "../../../assets/css/my_variables"
+
+form
+  display: flex
+  align-content: center
+  justify-content: center
+  flex-direction: column
+  max-width: 100%
+
+  height: 100vh
+  > *
+    margin: 10px auto
+    width: 300px
+    max-width: 85%
+    padding: 15px 20px
+    font-weight: bold
+  input, button
+    border: 0
+
+  input
+    background-color: rgba(255,255,255,.3)
+    border-width: 0
+    border-bottom: 3px solid #d5d5d5
+    border-radius: 0
+    transition: border ease .4s
+
+    &::placeholder
+      opacity: 0.3
+
+
+    &:focus
+      outline: 0
+      border-bottom-color: rgba(153, 153, 0, 0.55) !important
+
+    &.active
+      border-bottom-color: rgba(0, 128, 0, 0.3)
+    &.passive
+      border-bottom-color: rgba(255, 0, 0, 0.25)
+
+  button
+    background-color: $color-1
+    &:not([disabled])
+      opacity: .7
+
+    &:hover
+      opacity: 1
