@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from 'angular-web-storage';
+import {Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
 
 @Component({
@@ -10,7 +11,8 @@ import {NgForm} from "@angular/forms";
 export class CreateCampaignComponent implements OnInit {
 
   constructor(
-    private local: LocalStorageService
+    private local: LocalStorageService,
+    private router: Router
   ) { }
 
   itemData = {
@@ -31,6 +33,8 @@ export class CreateCampaignComponent implements OnInit {
       var campaigns = this.local.get('campaigns')
       campaigns.unshift(this.itemData)
       this.set(1, "campaigns", campaigns)
+      newData.reset()
+      this.router.navigate(['']);
   }
 
   ngOnInit(): void {
