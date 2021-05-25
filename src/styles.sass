@@ -114,6 +114,7 @@ textarea
   justify-content: center
   background-color: rgba(255,255,255,.4)
   backdrop-filter: blur(2px)
+  -webkit-backdrop-filter: blur(2px)
   @extend .d-flex
   @extend .align-items-center
   @extend .transition
@@ -151,3 +152,11 @@ textarea
     pointer-events: auto
     .modal-wrapper
       transform: translateY(0) scale(1)
+
+
+
+@media (max-width: 768px)
+  main .container.flex-row
+    flex-direction: column !important
+    align-items: stretch
+
